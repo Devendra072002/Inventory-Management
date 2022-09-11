@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Item Name</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Sold</th>
+                <th scope="col">Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%Stocks.forEach(function(detail){%>
+                <tr>
+                    <th scope="row">
+                        <%=detail.id%>
+                    </th>
+                    <td>
+                        <%=detail.STOCK%>
+                    </td>
+                    <td>
+                        <%=detail.SOLD_QUANTITY%>
+                    </td>
+                    <td>
+                        <%=detail.RATE%>
+                    </td>
+                </tr>
+                <%});%>
+        </tbody>
+    </table>
+    <%- include("partials/footer"); -%>

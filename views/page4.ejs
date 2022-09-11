@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+  <title>Inventory Management</title>
+</head>
+
+<body>
+  <div class="container">
+    <form action="/" method="post" autocomplete="off">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Bill No.</label>
+        <input type="text" class="form-control" required name="billNo" id="exampleInputEmail1"
+          aria-describedby="emailHelp" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Date</label>
+        <input type="date" class="form-control" required name="date" id="exampleInputPassword1" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Type</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="type" value="Sale" id="flexRadioDefault1" />
+          <label class="form-check-label" for="flexRadioDefault1">
+            Sale
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="type" value="Purchase" id="flexRadioDefault2" checked />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Purchase
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Name Of Customer/Supplier</label>
+        <input type="text" class="form-control" required name="Name" id="exampleInputPassword1" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Item Name</label>
+        <select class="form-select" name="ItemName" aria-label="Default select example">
+          <option>Available Items</option>
+          <%Inventory.forEach(function(detail){%>
+            <option value="<%"="detail.id%">
+              > <%=detail.id%> (<%=detail.STOCK%>)
+            </option>
+            <%});%>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <div class="form-check">
+          <input class="form-check-input" onclick="test()" id="seeCheck" type="checkbox" value=""
+            id="flexCheckDefault" />
+          <label class="form-check-label" for="flexCheckDefault">
+            Not in List🤨 ?
+          </label>
+          <div id="tests" style="display: none">
+            <label for="exampleInputPassword1" class="form-label">Write here.😊</label>
+            <input type="text" class="form-control" name="NewItemName" id="exampleInputPassword1" />
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Quantity</label>
+        <input type="number" required class="form-control" name="Qty" id="exampleInputPassword1" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Rate</label>
+        <input type="number" required class="form-control" name="Rate" id="exampleInputPassword1" />
+      </div>
+      <button type="submit" class="btn btn-primary" name="Submit" value="Submitted">
+        Submit
+      </button>
+    </form>
+
+    <script>
+      function test() {
+        if (document.getElementById("seeCheck").checked) {
+          document.getElementById("tests").style.display = "block";
+        } else {
+          document.getElementById("tests").style.display = "none";
+        }
+      }
+    </script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

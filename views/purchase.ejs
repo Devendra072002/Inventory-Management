@@ -1,0 +1,36 @@
+<%- include("partials/header"); -%>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Bill No.</th>
+                <th scope="col">Date</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Rate/Item</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <%Purchases.forEach(function(detail){%>
+                <tr>
+                    <th scope="row">
+                        <%=detail.id%>
+                    </th>
+                    <td>
+                        <%=detail.DATE%>
+                    </td>
+                    <td>
+                        <%=detail.ITEM_NAME%>
+                    </td>
+                    <td>
+                        <%=detail.QUANTITY%>
+                    </td>
+                    <td>
+                        <%=detail.RATE%>
+                    </td>
+                </tr>
+                <%});%>
+
+        </tbody>
+    </table>
+    <%- include("partials/footer"); -%>

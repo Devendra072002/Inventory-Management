@@ -1,0 +1,89 @@
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 1;
+  height: 100%;
+  width: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: relative;
+  bottom: 1;
+  background: rgba(0, 255, 221, 0.609);
+  color: rgb(140, 0, 255);
+  width: 100%;
+  padding: 10px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+.center {
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-around;
+}
+
+button {
+  animation: wiggle 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+body {
+  background: #000;
+}
+
+button {  
+  height: 4em;
+  width: 7em;
+  
+  background: #444;
+  background: linear-gradient(top, #555, #333);
+  border: none;
+  border-top: 3px solid orange;
+  border-radius: 0 0 0.2em 0.2em;
+  color: #fff;
+  font-family: Helvetica, Arial, Sans-serif;
+  font-size: 1em;
+  transform-origin: 50% 5em;
+  padding: 0%;
+}
